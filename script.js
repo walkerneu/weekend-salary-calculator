@@ -44,8 +44,11 @@ function forSubmit (event) {
 
     let totalMonthly = document.getElementById("totalMonthly")
     totalMonthly.textContent = ''
-    if (totalSalary / 12 > 20000)
-        totalMonthly.innerHTML += `<div class="over-budget">$${totalSalary / 12}</div>`
+    if (totalSalary / 12 > 20000) {
+        let budget = document.getElementById("budget");
+        budget.classList.add("over-budget");
+        totalMonthly.textContent = `$${totalSalary / 12}`
+    }
     else {
     totalMonthly.textContent = `$${totalSalary / 12}`
     }
