@@ -1,20 +1,61 @@
+header {
+    text-align: center;
+    font-family: monospace;
+    color: rgb(160, 188, 238);
+    background-color: slategray;
+    padding: 6px;
+
+}
+
+body {
+    background-image: url("https://img.freepik.com/premium-photo/burning-dollar-black-background_250994-1849.jpg");
+}
+
+h2 {
+    text-align: center;
+    font-family: monospace;
+    background-color: black;
+    color: coral;
+    padding: 3px;
+}
+form {
+    align-self: center;
+}
+
 table {
     width: 100%;
     text-align: left;
   }
   table, th, td {
-    border: 1px
+    border: 1px;
     border-collapse: collapse;
     height: 2.15em;
   }
   th, td {
     padding: .5em;
     min-width: 3.5em;
+    background-color: black;
+    color: aquamarine;
   }
  
   tbody tr:nth-child(odd){ 
-    background: #fcfcfc;
+    background: #13518300;
   }
   tbody tr:nth-child(even){
-    background: #d1acf1;
+    background: #4b395b;
+  }
+  footer {
+    background-color: black;
+    color: coral;
+  }
+
+  .over-budget {
+    color: red;
+    animation: blinker 1s step-start infinite;
+  }
+  
+  @keyframes blinker {
+    50% {
+      opacity: 0;
+    }
   }

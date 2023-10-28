@@ -35,7 +35,7 @@ function forSubmit (event) {
         <td>${lastName}</td>
         <td>${employeeID}</td>
         <td>${jobTitle}</td>
-        <td>${annualSalary}</td>
+        <td>$${annualSalary}</td>
         <td><button onclick="deleteEmployee(event)">📛</button></td>
     </tr>`
 
@@ -44,8 +44,11 @@ function forSubmit (event) {
 
     let totalMonthly = document.getElementById("totalMonthly")
     totalMonthly.textContent = ''
+    if (totalSalary / 12 > 20000)
+        totalMonthly.innerHTML += `<div class="over-budget">$${totalSalary / 12}</div>`
+    else {
     totalMonthly.textContent = `$${totalSalary / 12}`
-
+    }
 }
 
 function deleteEmployee(event){
