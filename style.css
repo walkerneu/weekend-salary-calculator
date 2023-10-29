@@ -17,10 +17,36 @@ h2 {
     background-color: black;
     color: coral;
     padding: 3px;
+    width: -20px;
 }
 form {
     align-self: center;
 }
+input[type=text] {
+    background-color: #43dd55;
+    width: 15%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    transition: width 0.4s ease-in-out;
+  }
+
+  input[type=text]:focus {
+    width: 100%;
+  }
+
+  input[type=number] {
+    background-color: #43dd55;
+    width: 15%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    transition: width 0.4s ease-in-out;
+  }
+
+  input[type=number]:focus {
+    width: 100%;
+  }
 
 table {
     width: 100%;
@@ -47,11 +73,21 @@ table {
   footer {
     background-color: black;
     color: coral;
+    text-align: center;
+    font-size: large;
+    padding: 3px;
+    width: -20px;
+    font-family: monospace;
   }
 
   .over-budget {
     color: red;
-    animation: blinker 1s step-start infinite;
+    text-align: center;
+    padding: 3px;
+    width: -20px;
+    font-family: monospace;
+    font-size: large;
+    animation: blinker 2s step-start infinite;
   }
   
   @keyframes blinker {
