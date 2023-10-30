@@ -56,7 +56,6 @@ function forSubmit (event) {
 }
 
 function deleteEmployee(event){
-    
     event.target.parentElement.parentElement.remove();
 }
 
