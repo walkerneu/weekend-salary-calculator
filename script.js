@@ -36,27 +36,31 @@ function forSubmit (event) {
         <td>${employeeID}</td>
         <td>${jobTitle}</td>
         <td>${annualSalary}</td>
-        <td><button onclick="deleteEmployee(event)">📛</button></td>
+        <td><button onclick="deleteEmployee(event, ${annualSalary})">📛</button></td>
     </tr>`
 
     totalSalary += Number(annualSalary);
-    console.log(totalSalary);
+    // console.log(totalSalary);
 
     let totalMonthly = document.getElementById("totalMonthly")
     totalMonthly.textContent = ''
+    totalMonthly.innerHTML = `
+        <p>Total Monthly: $${totalSalary / 12}</p>`
     if (totalSalary / 12 > 20000) {
         totalMonthly.classList.add("over-budget");
-        totalMonthly.innerHTML = `
-        <p>Total Monthly: $${totalSalary / 12}</p>`
-    }
-    else {
-        totalMonthly.innerHTML = `
-        <p>Total Monthly: $${totalSalary / 12}</p>`
     }
 }
 
-function deleteEmployee(event){
+function deleteEmployee(event, annualSalary){
+    totalSalary -= Number(annualSalary);
+    // console.log(totalSalary);
+    let totalMonthly = document.getElementById("totalMonthly")
+    totalMonthly.innerHTML = `
+    <p>Total Monthly: $${totalSalary / 12}</p>`
     event.target.parentElement.parentElement.remove();
+    if (totalSalary / 12 <= 20000) {
+        totalMonthly.classList.remove("over-budget");
+    }
 }
 
 
